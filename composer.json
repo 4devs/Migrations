@@ -1,0 +1,36 @@
+{
+    "name": "fdevs/migrations",
+    "license": "MIT",
+    "type": "library",
+    "description": "migrations library",
+    "homepage": "https://github.com/4devs/Migration",
+    "keywords": ["migrations", "database"],
+    "authors": [
+        {
+            "name": "4devs company",
+            "homepage": "http://4devs.org"
+        },
+        {
+            "name": "Samusev Andrey",
+            "email": "andrey@4devs.org",
+            "homepage": "http://andrey.4devs.io/"
+        },
+        {
+            "name": "4devs Community",
+            "homepage": "https://github.com/4devs/Migration/contributors"
+        }
+    ],
+    "require-dev": {
+    },
+    "require": {
+        "php": ">=5.4",
+        "symfony/finder": "~2.7"
+    },
+    "suggest": {
+        "symfony/console": "to run the migration from the console",
+        "doctrine/mongodb": "migrate mongodb"
+    },
+    "autoload": {
+        "psr-4": {"FDevs\\Migrations\\": ""}
+    }
+}

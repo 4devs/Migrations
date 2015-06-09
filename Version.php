@@ -74,7 +74,9 @@ class Version
         if (!$migration instanceof MigrationInterface) {
             throw InterfaceException::create($this->class);
         }
-        $this->provider->prepare($migration);
+        if ($this->provider->isSupport($migration)) {
+            $this->provider->prepare($migration);
+        }
         if ($direction === Migration::DIRECTION_UP || $direction === Migration::DIRECTION_DOWN) {
             $response = $this->run($migration, $direction);
         } else {

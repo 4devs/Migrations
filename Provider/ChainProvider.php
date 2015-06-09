@@ -27,7 +27,9 @@ class ChainProvider implements ProviderInterface
     public function prepare(MigrationInterface $migration)
     {
         foreach ($this->providerList as $provider) {
-            $provider->prepare($migration);
+            if ($provider->isSupport($migration)) {
+                $provider->prepare($migration);
+            }
         }
 
         return $this;
@@ -45,5 +47,21 @@ class ChainProvider implements ProviderInterface
         $this->providerList[] = $provider;
 
         return $this;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function isSupport(MigrationInterface $migration)
+    {
+        $support = false;
+        foreach ($this->providerList as $provider) {
+            if ($provider->isSupport($migration)) {
+                $support = true;
+                break;
+            }
+        }
+
+        return $support;
     }
 }

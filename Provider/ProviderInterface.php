@@ -14,4 +14,13 @@ interface ProviderInterface
      * @return self
      */
     public function prepare(MigrationInterface $migration);
+
+    /**
+     * is support migration
+     *
+     * @param MigrationInterface $migration
+     *
+     * @return boolean
+     */
+    public function isSupport(MigrationInterface $migration);
 }

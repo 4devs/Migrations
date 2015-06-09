@@ -26,10 +26,18 @@ class MongodbProvider implements ProviderInterface
      */
     public function prepare(MigrationInterface $migration)
     {
-        if ($migration instanceof MongodbMigration) {
+        if ($this->isSupport($migration)) {
             $migration->setDocumentManager($this->manager);
         }
 
         return $this;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function isSupport(MigrationInterface $migration)
+    {
+        return $migration instanceof MongodbMigration;
     }
 }

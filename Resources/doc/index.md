@@ -1,19 +1,21 @@
-Getting Started With Migrations Library
-=======================================
+Getting Started With The Migrations Library
+===========================================
+
+The main purpose of this library is to provide a way to easily do data migration during lifetime of the application.
+It can also be used to do database scheme migrations, too.
 
 ## Installation and usage
 
-Installation and usage is a quick:
+Installation and usage are easy:
 
-1. Download Migrations library using composer
+1. Download the Migrations library using composer
 2. Use the Migrations library
-3. Usage with symfony [console](https://github.com/symfony/Console)
-4. Usage with mongodb collection config
+3. Usage with the Symfony [Console](https://github.com/symfony/Console) component
+4. Usage with the mongodb collection config
 
+### Step 1: Download the Migrations library using composer
 
-### Step 1: Download Download Migrations library using composer
-
-Add Migrations Library in your composer.json:
+Add the Migrations library to your composer.json file:
 
 ```js
 {
@@ -23,22 +25,24 @@ Add Migrations Library in your composer.json:
 }
 ```
 
-Now tell composer to download the library by running the command:
+Now tell composer to download the library by running the next command:
 
 ``` bash
 $ php composer.phar update fdevs/migrations
 ```
 
-Composer will install the bundle to your project's `vendor/fdevs` directory.
+Composer will download the library into your project's `vendor/fdevs` directory.
 
 
-### Step 2: Base usage the library
+### Step 2: Base usage of the library
 
-#### create migration
+#### Create a migration class
+
+Each migration class must contain a 14-digit version (YYYYmmddHHiiss).
 
 ```php
 <?php
-
+// src/App/Migrations/Version20150601103845.php
 namespace App\Migrations;
 
 use FDevs\Migrations\Migration\MongodbMigration;
@@ -57,19 +61,31 @@ class Version20150601103845 extends MongodbMigration
 }
 ```
 
-#### run migration
+#### Do migration
+
+You need to install `doctrine/mongodb-odm` to work with DocumentManager, see the `suggest` section in the composer.json file.
 
 ```php
 <?php
+
 require __DIR__.'/../vendor/autoload.php';
 
 use FDevs\Migrations\Configuration\FilesConfiguration;
-use FDevs\Migrations\Migration\MongodbMigration;
 use FDevs\Migrations\Migration;
 use FDevs\Migrations\Provider\MongodbProvider;
 use Doctrine\ODM\MongoDB\DocumentManager;
 use Doctrine\ODM\MongoDB\Configuration;
 use Doctrine\MongoDB\Connection;
+
+$mongoConnection = new Connection();
+$mongoConfig = new Configuration();
+
+// don't forget to set up $mongoConfig:
+$config->setProxyDir(__DIR__ . '/Proxies');
+$config->setProxyNamespace('Proxies');
+$config->setHydratorDir(__DIR__ . '/Hydrators');
+$config->setHydratorNamespace('Hydrators');
+$config->setDefaultDB('migration_demo');
 
 $dm = DocumentManager::create(new Connection(), new Configuration());
 $provider = new MongodbProvider($dm);
@@ -78,13 +94,14 @@ $cacheDir = realpath(__DIR__.'/../var/cache');
 $config = new FilesConfiguration($migrationsDirs, $cacheDir, $provider);
 
 $migration = new Migration($config);
-//run all migration from current  
+
+//run all migrations starting from the current version
 $migration->migrate();
 ```
 
-### Step 3: Usage with symfony console
+### Step 3: Usage with the Symfony Console component
 
-add command
+Create an application or register the migration commands in your application
 
 ```php
 #!/usr/bin/env php
@@ -93,19 +110,17 @@ add command
 
 require __DIR__.'/vendor/autoload.php';
 
-use Acme\Console\Command\GreetCommand;
 use Symfony\Component\Console\Application;
 use FDevs\Migrations\Console\Command\InfoCommand;
 use FDevs\Migrations\Console\Command\MigrateCommand;
 use FDevs\Migrations\Configuration\FilesConfiguration;
-use FDevs\Migrations\Migration\MongodbMigration;
 use FDevs\Migrations\Migration;
 use FDevs\Migrations\Provider\MongodbProvider;
 use Doctrine\ODM\MongoDB\DocumentManager;
 use Doctrine\ODM\MongoDB\Configuration;
 use Doctrine\MongoDB\Connection;
 
-
+$dm = //DocumentManager::create...
 $provider = new MongodbProvider($dm);
 $migrationsDirs = [realpath(__DIR__.'/../src/App/Migrations')];
 $cacheDir = realpath(__DIR__.'/../var/cache');
@@ -122,34 +137,32 @@ $application->add($info);
 $application->run();
 ```
 
-run
+Run the commands via
 
 ```bash
 $ php application.php fdevs:migrations:info
 $ php application.php fdevs:migrations:migrate
 ```
 
-### Step 4: Usage with mongodb collection config
+### Step 4: Usage with the mongodb collection config
 
 ```php
 <?php
 require __DIR__.'/../vendor/autoload.php';
 
 use FDevs\Migrations\Configuration\MongodbConfiguration;
-use FDevs\Migrations\Migration\MongodbMigration;
 use FDevs\Migrations\Migration;
 use FDevs\Migrations\Provider\MongodbProvider;
 use Doctrine\ODM\MongoDB\DocumentManager;
 use Doctrine\ODM\MongoDB\Configuration;
 use Doctrine\MongoDB\Connection;
 
-$dm = DocumentManager::create(new Connection(), new Configuration());
+$dm = //DocumentManager::create...
 $provider = new MongodbProvider($dm);
 $migrationsDirs = [realpath(__DIR__.'/../src/App/Migrations')];
 $collection = '_fdevs_migrations';
 $config = new MongodbConfiguration($migrationsDirs, $provider, $dm, $collection);
 
 $migration = new Migration($config);
-//run all migration from current  
 $migration->migrate();
 ```

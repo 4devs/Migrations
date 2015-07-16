@@ -28,7 +28,7 @@
     },
     "suggest": {
         "symfony/console": "to run the migration from the console",
-        "doctrine/mongodb": "migrate mongodb"
+        "doctrine/mongodb-odm": "migrate mongodb"
     },
     "autoload": {
         "psr-4": {"FDevs\\Migrations\\": ""}

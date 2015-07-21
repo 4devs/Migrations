@@ -17,9 +17,11 @@ abstract class AbstractConfiguration implements ConfigurationInterface
      *
      * @param array $dirs
      */
-    public function setDirs(array $dirs = [])
+    public function setDirs(array $dirs)
     {
-        $this->load($dirs);
+        if (count($dirs)) {
+            $this->load($dirs);
+        }
     }
 
     /**

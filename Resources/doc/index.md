@@ -81,13 +81,13 @@ $mongoConnection = new Connection();
 $mongoConfig = new Configuration();
 
 // don't forget to set up $mongoConfig:
-$config->setProxyDir(__DIR__ . '/Proxies');
-$config->setProxyNamespace('Proxies');
-$config->setHydratorDir(__DIR__ . '/Hydrators');
-$config->setHydratorNamespace('Hydrators');
-$config->setDefaultDB('migration_demo');
+$mongoConfig->setProxyDir(__DIR__ . '/../var/cache/doctrine/Proxies');
+$mongoConfig->setProxyNamespace('Proxies');
+$mongoConfig->setHydratorDir(__DIR__ . '/../var/cache/doctrine/Hydrators');
+$mongoConfig->setHydratorNamespace('Hydrators');
+$mongoConfig->setDefaultDB('migration_demo');
 
-$dm = DocumentManager::create(new Connection(), new Configuration());
+$dm = DocumentManager::create($mongoConnection, $mongoConfig);
 $provider = new MongodbProvider($dm);
 $migrationsDirs = [realpath(__DIR__.'/../src/App/Migrations')];
 $cacheDir = realpath(__DIR__.'/../var/cache');

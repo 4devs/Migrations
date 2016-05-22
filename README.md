@@ -7,7 +7,7 @@ Documentation
 Installation
 ------------
 
-The all installation instructions are located in [documentation](https://github.com/4devs/Migrations/blob/master/Resources/doc/index.md).
+The all installation instructions are located in [documentation](https://github.com/4devs/migrations/blob/master/Resources/doc/index.md).
 
 License
 -------
@@ -19,4 +19,4 @@ This library is distributed under the MIT license. See the complete license in t
 Reporting an issue or a feature request
 ---------------------------------------
 
-Issues and feature requests are tracked in the [Github issue tracker](https://github.com/4devs/Migrations/issues).
+Issues and feature requests are tracked in the [Github issue tracker](https://github.com/4devs/migrations/issues).

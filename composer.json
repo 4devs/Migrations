@@ -3,7 +3,7 @@
     "license": "MIT",
     "type": "library",
     "description": "migrations library",
-    "homepage": "https://github.com/4devs/Migration",
+    "homepage": "https://github.com/4devs/migration",
     "keywords": ["migrations", "database"],
     "authors": [
         {
@@ -17,14 +17,14 @@
         },
         {
             "name": "4devs Community",
-            "homepage": "https://github.com/4devs/Migration/contributors"
+            "homepage": "https://github.com/4devs/migration/contributors"
         }
     ],
     "require-dev": {
     },
     "require": {
         "php": ">=5.4",
-        "symfony/finder": "~2.7"
+        "symfony/finder": "~2.7|~3.0"
     },
     "suggest": {
         "symfony/console": "to run the migration from the console",

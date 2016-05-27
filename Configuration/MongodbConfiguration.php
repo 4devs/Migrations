@@ -33,7 +33,7 @@ class MongodbConfiguration extends AbstractConfiguration
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getProvider()
     {
@@ -41,7 +41,7 @@ class MongodbConfiguration extends AbstractConfiguration
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getCurrentVersion()
     {
@@ -56,7 +56,7 @@ class MongodbConfiguration extends AbstractConfiguration
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function updateVersion($version, $direction)
     {

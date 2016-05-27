@@ -32,7 +32,7 @@ class FilesConfiguration extends AbstractConfiguration
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getProvider()
     {
@@ -40,7 +40,7 @@ class FilesConfiguration extends AbstractConfiguration
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getCurrentVersion()
     {
@@ -59,7 +59,7 @@ class FilesConfiguration extends AbstractConfiguration
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function updateVersion($version, $direction)
     {

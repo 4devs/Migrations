@@ -8,7 +8,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 class InfoCommand extends AbstractCommand
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     protected function configure()
     {
@@ -18,7 +18,7 @@ class InfoCommand extends AbstractCommand
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function execute(InputInterface $input, OutputInterface $output)
     {

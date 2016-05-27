@@ -5,7 +5,7 @@ namespace FDevs\Migrations\Exception;
 class InterfaceException extends \RuntimeException
 {
     /**
-     * create
+     * create.
      *
      * @param string $interface
      *

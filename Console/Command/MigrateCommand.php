@@ -10,7 +10,7 @@ use Symfony\Component\Console\Input\InputArgument;
 class MigrateCommand extends AbstractCommand
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     protected function configure()
     {
@@ -26,7 +26,7 @@ class MigrateCommand extends AbstractCommand
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function execute(InputInterface $input, OutputInterface $output)
     {

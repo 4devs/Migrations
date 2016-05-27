@@ -5,48 +5,49 @@ namespace FDevs\Migrations;
 interface MigrationInterface
 {
     /**
-     * run pre migration command
+     * run pre migration command.
      *
      * @return Response|null
      */
     public function preUp();
 
     /**
-     * run migration
+     * run migration.
      *
      * @return Response|null
      */
     public function up();
 
     /**
-     * run post migration command
+     * run post migration command.
      *
      * @return Response|null
      */
     public function postUp();
 
     /**
-     * pre down
+     * pre down.
      *
      * @return Response|null
      */
     public function preDown();
 
     /**
-     * down
+     * down.
+     *
      * @return Response|null
      */
     public function down();
 
     /**
-     * post down
+     * post down.
      *
      * @return Response|null
      */
     public function postDown();
 
     /**
-     * set response by method
+     * set response by method.
      *
      * @param string   $method   example `postDown` or `down` or any method MigrationInterface
      * @param Response $response
@@ -56,7 +57,7 @@ interface MigrationInterface
     public function setResponseByMethod($method, Response $response = null);
 
     /**
-     * get response by method example `postDown` or `down` or any method MigrationInterface
+     * get response by method example `postDown` or `down` or any method MigrationInterface.
      *
      * @param string $method
      *

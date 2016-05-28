@@ -13,7 +13,7 @@ abstract class AbstractConfiguration implements ConfigurationInterface
     private $migrations = [];
 
     /**
-     * set dirs
+     * set dirs.
      *
      * @param array $dirs
      */
@@ -25,7 +25,7 @@ abstract class AbstractConfiguration implements ConfigurationInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getMigrationsToExecute($direction, $to)
     {
@@ -53,7 +53,7 @@ abstract class AbstractConfiguration implements ConfigurationInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getLatestVersion()
     {
@@ -64,7 +64,7 @@ abstract class AbstractConfiguration implements ConfigurationInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getMigrations()
     {
@@ -87,7 +87,7 @@ abstract class AbstractConfiguration implements ConfigurationInterface
     }
 
     /**
-     * load migrations
+     * load migrations.
      *
      * @param array $dirs
      *
@@ -120,7 +120,7 @@ abstract class AbstractConfiguration implements ConfigurationInterface
      * Check if a given fixture is transient and should not be considered a data fixtures
      * class.
      *
-     * @return boolean
+     * @return bool
      */
     private function isTransient($className)
     {

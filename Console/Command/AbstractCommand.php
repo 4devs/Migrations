@@ -11,7 +11,7 @@ abstract class AbstractCommand extends Command
     private $configuration;
 
     /**
-     * set configuration
+     * set configuration.
      *
      * @param ConfigurationInterface $configuration
      *
@@ -25,7 +25,7 @@ abstract class AbstractCommand extends Command
     }
 
     /**
-     * get Migration Configuration
+     * get Migration Configuration.
      *
      * @return ConfigurationInterface
      */

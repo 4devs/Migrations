@@ -25,7 +25,7 @@ class Migration
     }
 
     /**
-     * migrate
+     * migrate.
      *
      * @param int    $to        if zero migrate to latest version
      * @param string $direction

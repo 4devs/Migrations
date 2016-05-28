@@ -7,7 +7,7 @@ use FDevs\Migrations\Migration;
 class DirectionException extends MigrationException
 {
     /**
-     * create
+     * create.
      *
      * @param string $direction
      *

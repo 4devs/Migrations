@@ -1,4 +1,5 @@
 <?php
+
 namespace FDevs\Migrations;
 
 abstract class AbstractMigration implements MigrationInterface
@@ -9,7 +10,7 @@ abstract class AbstractMigration implements MigrationInterface
     private $response = [];
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function postUp()
     {
@@ -17,7 +18,7 @@ abstract class AbstractMigration implements MigrationInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function preUp()
     {
@@ -25,7 +26,7 @@ abstract class AbstractMigration implements MigrationInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function preDown()
     {
@@ -33,7 +34,7 @@ abstract class AbstractMigration implements MigrationInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function postDown()
     {
@@ -41,7 +42,7 @@ abstract class AbstractMigration implements MigrationInterface
     }
 
     /**
-     *{@inheritDoc}
+     *{@inheritdoc}
      */
     public function setResponseByMethod($method, Response $response = null)
     {
@@ -51,7 +52,7 @@ abstract class AbstractMigration implements MigrationInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getResponseByMethod($method)
     {

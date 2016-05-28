@@ -22,7 +22,7 @@ class ChainProvider implements ProviderInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function prepare(MigrationInterface $migration)
     {
@@ -36,7 +36,7 @@ class ChainProvider implements ProviderInterface
     }
 
     /**
-     * add provider
+     * add provider.
      *
      * @param ProviderInterface $provider
      *
@@ -50,7 +50,7 @@ class ChainProvider implements ProviderInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function isSupport(MigrationInterface $migration)
     {

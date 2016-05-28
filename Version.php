@@ -39,7 +39,7 @@ class Version
     }
 
     /**
-     * create migrate
+     * create migrate.
      *
      * @return MigrationInterface
      */
@@ -49,7 +49,7 @@ class Version
     }
 
     /**
-     * get class
+     * get class.
      *
      * @return string
      */
@@ -59,7 +59,7 @@ class Version
     }
 
     /**
-     * execute migration by direction
+     * execute migration by direction.
      *
      * @param string $direction
      *
@@ -88,7 +88,7 @@ class Version
     }
 
     /**
-     * get version
+     * get version.
      *
      * @return int
      */
@@ -98,7 +98,7 @@ class Version
     }
 
     /**
-     * run migration
+     * run migration.
      *
      * @param MigrationInterface $migration
      * @param string             $direction

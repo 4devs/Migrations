@@ -21,6 +21,8 @@
         }
     ],
     "require-dev": {
+        "symfony/console": "~2.7|~3.0",
+        "doctrine/mongodb-odm": "~1.0"
     },
     "require": {
         "php": ">=5.4",

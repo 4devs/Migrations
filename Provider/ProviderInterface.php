@@ -7,7 +7,7 @@ use FDevs\Migrations\MigrationInterface;
 interface ProviderInterface
 {
     /**
-     * prepare migration
+     * prepare migration.
      *
      * @param MigrationInterface $migration
      *
@@ -16,11 +16,11 @@ interface ProviderInterface
     public function prepare(MigrationInterface $migration);
 
     /**
-     * is support migration
+     * is support migration.
      *
      * @param MigrationInterface $migration
      *
-     * @return boolean
+     * @return bool
      */
     public function isSupport(MigrationInterface $migration);
 }

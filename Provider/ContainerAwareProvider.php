@@ -22,7 +22,7 @@ class ContainerAwareProvider implements ProviderInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function prepare(MigrationInterface $migration)
     {
@@ -34,7 +34,7 @@ class ContainerAwareProvider implements ProviderInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function isSupport(MigrationInterface $migration)
     {

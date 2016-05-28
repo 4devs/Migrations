@@ -5,7 +5,7 @@ namespace FDevs\Migrations\Exception;
 class UnknownVersionException extends MigrationException
 {
     /**
-     * create
+     * create.
      *
      * @param string $version
      *

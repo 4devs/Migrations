@@ -53,4 +53,15 @@ abstract class MongodbMigration extends AbstractMigration
 
         return $client->selectCollection($database, $collectionName);
     }
+
+    /**
+     * @param string $className
+     *
+     * @return \Doctrine\MongoDB\Collection
+     * @throws \Doctrine\ODM\MongoDB\MongoDBException
+     */
+    protected function getCollection($className)
+    {
+        return $this->getDocumentManager()->getDocumentCollection($className);
+    }
 }
